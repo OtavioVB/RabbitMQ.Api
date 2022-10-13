@@ -1,3 +1,5 @@
+using RabbitService.Publisher.Services.Messenger;
+
 namespace RabbitService.Publisher
 {
     public class Program
@@ -5,6 +7,7 @@ namespace RabbitService.Publisher
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddTransient<RabbitMQService>();
 
             // Add services to the container.
 
